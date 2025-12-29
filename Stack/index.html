@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack (Undo / Redo)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Undo / Redo System</h1>
+        <div class="save-status">
+          <!-- <span class="status-badge">Saved</span> -->
+          <span id="last-saved">Last saved: --:--:--</span>
+        </div>
+      </div>
+
+      <div class="action-form">
+        <div style="flex: 1">
+          <label class="action-label">New action</label>
+          <input
+            type="text"
+            class="action-input"
+            id="newAction"
+            placeholder="Type something to add"
+            required
+          />
+        </div>
+        <button class="btn btn-primary" id="addBtn">Add</button>
+        <button class="btn btn-secondary" id="clearBtn">Clear</button>
+      </div>
+
+      <div class="undo-redo-buttons">
+        <button class="btn btn-undo" id="undoBtn">Undo</button>
+        <button class="btn btn-redo" id="redoBtn">Redo</button>
+      </div>
+
+      <div class="stack-container">
+        <div class="stack-box">
+          <div class="stack-header">
+            <span class="stack-title">Actions (stack top first)</span>
+            <span class="stack-count" id="undoCount">0</span>
+          </div>
+          <div class="stack-content" id="undoStack">
+            <div class="stack-empty">Empty</div>
+          </div>
+        </div>
+
+        <div class="stack-box">
+          <div class="stack-header">
+            <span class="stack-title">Undone (redo stack)</span>
+            <span class="stack-count" id="redoCount">0</span>
+          </div>
+          <div class="stack-content" id="redoStack">
+            <div class="stack-empty">Empty</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Firebase SDK (compat version for CDN) -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

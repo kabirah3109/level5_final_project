@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Visitor Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Unique Visitor Tracker</h1>
+        </header>
+        
+        <main>
+            <section class="visitor-form">
+                <h2>Add New Visitor</h2>
+                <form id="visitorForm">
+                    <div class="form-group">
+                        <label for="visitorId">Visitor Identifier (Email or IP):</label>
+                        <input type="text" id="visitorId" placeholder="e.g., user@gmail.com " required>
+                    </div>
+                    <button type="submit">Add Visitor</button>
+                </form>
+            </section>
+            
+            <section class="stats">
+                <h2>Visitor Statistics</h2>
+                <div class="stats-cards">
+                    <div class="card">
+                        <h3>Total Unique Visitors</h3>
+                        <p id="totalVisitors">0</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="visitor-list">
+                <h2>Visitor Identifiers</h2>
+                <div id="visitorList" class="list-container">
+                    <p class="empty-message">No visitors yet. Add your first visitor!</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

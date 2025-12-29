@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Task Scheduler</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Task Scheduler</h1>
+
+        <div class="grid">
+            <!-- Task Form -->
+            <div class="card">
+                <div class="card-title">Add New Task</div>
+                <div class="form-group">
+                    <label for="title">Task Title</label>
+                    <input type="text" id="title" placeholder="Enter task title" required />
+                </div>
+                <div class="form-group">
+                    <label for="type">Task Type</label>
+                    <select id="type">
+                        <option value="email">Email</option>
+                        <option value="file">File Upload</option>
+                        <option value="message">Message</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="desc">Description</label>
+                    <textarea id="desc" placeholder="Optional task details..."></textarea>
+                </div>
+                <button class="btn-add" id="addBtn">Add Task</button>
+                <button class="btn-clear" id="clearBtn">Clear All</button>
+            </div>
+
+            <!-- Task Queue & Completed -->
+            <div class="card">
+                <div class="queue-header">
+                    <div class="card-title">Task Queue (FIFO Order)</div>
+                    <div>
+                        <button class="btn-mark-done" id="markDoneBtn">Mark as Done</button>
+                        <span class="task-count" id="countBadge">0 tasks</span>
+                    </div>
+                </div>
+                <div id="taskQueueContainer">
+                    <div class="empty-message">Queue is empty. Add a task!</div>
+                </div>
+
+                <div style="margin-top: 20px; padding-top: 12px; border-top: 1px solid #dee2e6;">
+                    <div class="card-title">Recently Completed</div>
+                    <div id="completedContainer">
+                        <div class="empty-message">No completed tasks yet.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ <script src="script.js"></script>   
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts Manager</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Contacts Manager</h1>
+            <p>Store, visualize, and manage your contacts with this interactive map interface</p>
+        </header>
+        
+        <div class="app-container">
+            <div class="form-section">
+                <h2 class="form-title"><i class="fas fa-user-plus"></i> Add/Edit Contact</h2>
+                
+                <div class="form-group">
+                    <label for="name">Name <span style="color: red;">*</span></label>
+                    <input type="text" id="name" placeholder="Enter contact name (e.g., kabirah)" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number <span style="color: red;">*</span></label>
+                    <input type="tel" id="phone" placeholder="Enter phone number (e.g., +1234567890)" required pattern="[+]?[0-9]{10,15}" title="Please enter a valid phone number (10-15 digits, optional + prefix)">
+                </div>
+                
+                <div class="btn-group">
+                    <button id="addBtn" class="btn btn-primary"><i class="fas fa-plus"></i> Add Contact</button>
+                    <button id="updateBtn" class="btn btn-secondary" style="display: none;"><i class="fas fa-sync"></i> Update Contact</button>
+                    <button id="cancelBtn" class="btn btn-danger" style="display: none;"><i class="fas fa-times"></i> Cancel</button>
+                </div>
+                
+                <div class="search-section">
+                    <div class="search-header">Search Contact</div>
+                    <div class="search-input-wrapper">
+                        <input type="text" id="search" placeholder="Search by name...">
+                        <button class="search-btn">Search</button>
+                    </div>
+                    <div class="contacts-list">
+                        <div class="contacts-header">
+                            <h2 class="contacts-title">Contacts</h2>
+                            <div class="contacts-count" id="contactsCount">0 contacts</div>
+                        </div>
+                        <div id="contactsContainer">
+                            <div class="empty-state" id="emptyState">
+                                <i class="fas fa-address-book"></i>
+                                <h3>No Contacts Yet</h3>
+                                <p>Add your first contact using the form on the left</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="notification" id="notification">Contact added successfully!</div>
+  <script src="script.js"></script>
+</body>
+</html>
